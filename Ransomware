@@ -1,0 +1,22 @@
+import os
+import pyaes
+
+# Abrir o arquivo criptografado
+nome_arquivo = "meuarquivo.txt.ransom"
+arquivo = open(nome_arquivo, "rb")
+dados_arquivo = arquivo.read()
+arquivo.close()
+
+# Chave para descriptografia
+chave = b"minhasenhasecreta"
+aes = pyaes.AESModeOfOperationCTR(chave)
+dados_descriptografados = aes.decrypt(dados_arquivo)
+
+# Remover o arquivo criptografado
+os.remove(nome_arquivo)
+
+# Criar o arquivo descriptografado
+novo_arquivo = "meuarquivo.txt"
+novo_arquivo = open(f'{novo_arquivo}', "wb")
+novo_arquivo.write(dados_descriptografados)
+novo_arquivo.close()
