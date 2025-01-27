@@ -1,11 +1,11 @@
 # Ransomware-na-Pratica-com-Python
 
-O objetivo deste código é uma simulação de aplicação do ransoware utilizando os códigos python.
+"O objetivo deste código é simular o processo de descriptografar um arquivo que foi criptografado por um ransomware, usando Python.
 
-Chave para descriptografia: Ele usa uma chave predefinida (testeransomwares) para a descriptografia através do AES.
+1. **Chave para descriptografia**: O código utiliza uma chave predefinida (`testeransomwares`) para realizar a descriptografia através do algoritmo AES (Advanced Encryption Standard). Essa chave é fundamental para restaurar os dados criptografados.
 
-Descriptografar os dados: A descriptografia AES é realizada usando a chave.
+2. **Descriptografar os dados**: A criptografia AES é feita em modo CTR (Counter), e a chave fornecida é usada para descriptografar o conteúdo do arquivo original.
 
-Remover o arquivo criptografado: O arquivo criptografado original é excluído.
+3. **Remover o arquivo criptografado**: Após a descriptografia, o arquivo criptografado (com a extensão `.ransom`) é removido do sistema para evitar que ele seja acessado acidentalmente.
 
-Criar o arquivo descriptografado: Um novo arquivo (teste.txt) é criado com os dados descriptografados.
+4. **Criar o arquivo descriptografado**: Finalmente, o código cria um novo arquivo (no caso, `teste.txt`) contendo os dados descriptografados, restaurando o conteúdo original do arquivo criptografado."
